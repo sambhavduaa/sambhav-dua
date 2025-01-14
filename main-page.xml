@@ -1,0 +1,25 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo">
+    <ActionBar title="Citizen Threat Report" icon="" />
+    
+    <ScrollView>
+        <StackLayout class="p-4">
+            <Label text="Report a Threat" class="text-2xl font-bold mb-4 text-center" />
+            
+            <Label text="Threat Type" class="text-lg mb-2" />
+            <TextField hint="e.g. Suspicious activity" text="{{ threatType }}" class="mb-4 p-2 border rounded" />
+            
+            <Label text="Location" class="text-lg mb-2" />
+            <TextField hint="Enter location" text="{{ location }}" class="mb-4 p-2 border rounded" />
+            
+            <Label text="Description" class="text-lg mb-2" />
+            <TextView hint="Describe the threat in detail" text="{{ description }}" class="mb-4 p-2 border rounded" height="120" />
+            
+            <Label text="Urgency Level" class="text-lg mb-2" />
+            <ListPicker items="{{ urgencyLevels }}" selectedIndex="{{ selectedUrgencyIndex }}" class="mb-4" />
+            
+            <Button text="SUBMIT REPORT" tap="{{ onSubmitReport }}" class="bg-red-600 text-white font-bold py-3 rounded-lg" />
+            
+            <Label text="{{ statusMessage }}" class="mt-4 text-center" textWrap="true" />
+        </StackLayout>
+    </ScrollView>
+</Page>
